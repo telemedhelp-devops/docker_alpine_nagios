@@ -14,4 +14,6 @@ RUN apk add --virtual .runtime-dependencies $RUNTIME_PKGS
 
 ADD start_nagios.sh /bin
 
+USER nagios 
+
 CMD /bin/start_nagios.sh
