@@ -1,5 +1,8 @@
 #!/bin/sh
 
+touch /var/log/nagios.debug /var/log/nagios.log
+chown nagios:nagios /var/log/nagios*
+
 # to be able to send notifications
 postfix start 2>&1 | grep -v warning &
 

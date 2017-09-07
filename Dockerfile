@@ -21,6 +21,8 @@ RUN sed -re 's%^(nagios.*)/sbin/nologin%\1/bin/sh%g' -i /etc/passwd
 RUN sed -e 's/;security.limit_extensions =.*/security.limit_extensions =/g' -i /etc/php5/php-fpm.conf
 
 RUN touch /etc/php5/fpm.d/dummy.conf
+RUN mkdir -p /var/nagios/spool/checkresults
+RUN chown -R nagios:nagios /var/nagios/spool/checkresults
 
 ADD start_nagios.sh /bin
 
