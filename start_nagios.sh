@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir -p /var/log/nagios
-chown nagios:nagios /var/log/nagios
+chown nagios:nagios /var/log/nagios /etc/nagios/home/.ssh/docker-key
 
 # to be able to send notifications
 postfix start 2>&1 | grep -v warning &
